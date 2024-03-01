@@ -4,8 +4,8 @@ import time
 import mysql.connector
 from getpass import getpass
 import re
-import sqlite3
 
+#IN TRANSLATE PROCESS. PLEASE WAIT...
 
 print("""
 
@@ -23,12 +23,13 @@ zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 SISTEM OF MIGRATION ONUS | ONTS FIBERHOME WITH TL1
 
 AUTHOR: FELIPE LIRA
-DATE: 19/02/2024
+DATE: 22/02/2024
+LATEST MODIFICATION: 01/03/2024
 
 """)
 
 
-#Informando o endereço IPv4 do UNM2000 e realizando a verificação se o endereço é válido!
+#Entering the IPv4 of UNM2000
 server = input("Informe o endereço IPv4 do servidor UNM2000: ")
 match = re.match(r"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}", f"{server}")
 
@@ -39,21 +40,20 @@ while bool(match) == False:
     match = re.match(r"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}", f"{server}")
 
 
-
-user = input("Informe o seu usuario do UNM2000: ")
+#Entering the username and password UNM2000 with privileges for using TL1
+user = input("Enter your username of UNM2000: ")
 while user == '':
-   user = input("Informe o seu usuario do UNM2000: ")
+   user = input("Enter your username of UNM2000: ")
 
-  
-password = getpass("Informe a sua senha do UNM2000: ")
+password = getpass("Emter your password of UNM2000: ")
 while password == '':
-    password = getpass("Informe a sua senha do UNM2000: ")   
+    password = getpass("Emter your password of UNM2000: ")   
 
 
 
 
-#Informando os endereço de IPv4 das OLTs de Origem e Destino
-    
+
+#Entering the IPv4 Address of OLT Source and OLT Origin    
 ip_olt_origem = input("Informe o IPv4 da OLT de ORIGEM: ")
 match = re.match(r"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}", f"{ip_olt_origem}")
 while bool(match) == False:
